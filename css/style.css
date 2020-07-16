@@ -1,0 +1,235 @@
+body {
+  background-color: #F6D155;
+  height: 3000px; }
+
+* {
+  transition: all .5s ease; }
+
+.container .sideMenu {
+  position: fixed;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  height: 100%;
+  background-color: #393939;
+  margin-right: 3rem; }
+  .container .sideMenu img {
+    width: 100%; }
+  .container .sideMenu .directories {
+    margin-bottom: auto; }
+    .container .sideMenu .directories .dirct {
+      display: flex;
+      padding: 0 5%;
+      align-items: center;
+      border-bottom: .05rem solid grey;
+      cursor: pointer; }
+      .container .sideMenu .directories .dirct:hover h6 {
+        color: #FF7E71; }
+      .container .sideMenu .directories .dirct:hover i {
+        color: white; }
+    .container .sideMenu .directories .dirct:first-of-type {
+      padding-top: 0.4rem; }
+    .container .sideMenu .directories .dirct:last-of-type {
+      border: none; }
+    .container .sideMenu .directories h6 {
+      color: white;
+      margin-right: auto;
+      font-size: .7rem;
+      margin-top: 0.3rem; }
+    .container .sideMenu .directories i {
+      color: #FF7E71;
+      font-size: 0.6rem; }
+  .container .sideMenu .links {
+    display: flex;
+    justify-content: space-around;
+    padding: 1rem 2rem; }
+    .container .sideMenu .links i {
+      background-color: #FF7E71;
+      height: 2rem;
+      width: 2rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      color: #393939; }
+      .container .sideMenu .links i:hover {
+        background-color: white;
+        color: #FF7E71; }
+
+@media (max-width: 992px) {
+  .container {
+    max-width: 100%; }
+
+  .main {
+    width: 90% !important; }
+
+  .sideMenu {
+    width: 4rem !important; }
+    .sideMenu img {
+      display: none; }
+    .sideMenu .dirct {
+      border-bottom: none !important;
+      margin-bottom: 2rem;
+      margin-right: auto; }
+      .sideMenu .dirct i {
+        font-size: 1.5rem !important;
+        margin: 0 auto; }
+      .sideMenu .dirct h6 {
+        display: none; }
+    .sideMenu .dirct:first-of-type {
+      margin-top: 2rem; }
+    .sideMenu .links {
+      display: none !important; } }
+@media (max-width: 768px) {
+  .sideMenu {
+    display: none !important; }
+
+  .main {
+    width: 100% !important; }
+
+  .main nav {
+    display: flex !important; } }
+.main {
+  width: 78%;
+  margin-left: auto; }
+  .main .top-bottom {
+    position: fixed;
+    top: 0;
+    background-color: #F6D155;
+    height: 2rem;
+    width: 100%; }
+  .main nav {
+    display: none;
+    background-color: #393939 !important; }
+    .main nav .navbar-toggler i {
+      color: white; }
+    .main nav .navbar-brand img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%; }
+    .main nav .dirct {
+      display: flex;
+      padding: 0 5%;
+      align-items: center;
+      border-bottom: .05rem solid grey;
+      cursor: pointer;
+      border: none !important; }
+      .main nav .dirct:hover h6 {
+        color: #FF7E71; }
+      .main nav .dirct:hover i {
+        color: white; }
+      .main nav .dirct h6 {
+        color: white;
+        margin-right: auto;
+        font-size: .7rem;
+        margin-top: 0.3rem; }
+      .main nav .dirct i {
+        color: #FF7E71;
+        font-size: 0.6rem; }
+  .main .home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    margin-left: auto; }
+    .main .home .txt {
+      margin-left: 3rem; }
+      .main .home .txt h6 {
+        color: #FF7E71; }
+      .main .home .txt h3 {
+        font-size: 3rem; }
+    .main .home img {
+      margin-left: auto;
+      height: 100%; }
+  .main .applications {
+    display: flex; }
+    .main .applications .applicant {
+      width: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer; }
+      .main .applications .applicant i {
+        margin-right: 1rem; }
+    .main .applications .applicant:first-of-type {
+      color: #FF7E71;
+      background-color: #393939; }
+      .main .applications .applicant:first-of-type:hover {
+        animation: bounceInRight 1s ease-in-out; }
+    .main .applications .applicant:last-of-type {
+      background-color: #FF7E71;
+      color: #393939; }
+  .main .about {
+    background-color: white;
+    margin-top: 2rem;
+    padding: 4rem 2rem; }
+    .main .about h3 {
+      font-size: 3rem; }
+    .main .about .underH4 {
+      height: .2REM;
+      width: 10%;
+      background-color: #FF7E71;
+      margin-bottom: 2rem; }
+    .main .about .info {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 2rem; }
+      .main .about .info img {
+        width: 40%;
+        margin-right: 2rem; }
+      .main .about .info p {
+        font-size: 1rem; }
+      .main .about .info button {
+        cursor: pointer;
+        font-size: 1.5rem;
+        background-color: #FF7E71;
+        color: #393939;
+        border: #FF7E71 solid 1px; }
+        .main .about .info button:hover {
+          background-color: #393939;
+          color: #FF7E71; }
+    .main .about .parameters {
+      display: grid;
+      width: 100%;
+      grid-column-gap: 2rem;
+      grid-template-columns: 1fr 1fr; }
+      .main .about .parameters .parameter {
+        display: grid;
+        grid-template-columns: auto auto auto auto;
+        grid-auto-rows: auto auto;
+        margin-bottom: 1rem; }
+        .main .about .parameters .parameter h4:first-of-type {
+          grid-column: 1/2; }
+        .main .about .parameters .parameter h4:last-of-type {
+          grid-column: 4/span 1;
+          margin-left: auto; }
+        .main .about .parameters .parameter div {
+          grid-column: 1/span 4;
+          border: 0.1rem solid #FF7E71;
+          height: .5rem; }
+          .main .about .parameters .parameter div div {
+            height: 100%;
+            background-color: #FF7E71; }
+
+@media (max-width: 768px) {
+  .parameters {
+    grid-template-columns: auto !important; } }
+[data-aos="example-anim1"] {
+  width: 0 !important;
+  transition-property: all; }
+
+.parameters .parameter:first-of-type .aos-animate {
+  width: 85% !important; }
+
+.parameters .parameter:nth-of-type(2) .aos-animate {
+  width: 75% !important; }
+
+.parameters .parameter:nth-of-type(3) .aos-animate {
+  width: 90% !important; }
+
+.parameters .parameter:last-of-type .aos-animate {
+  width: 95% !important; }
+
+/*# sourceMappingURL=style.css.map */
