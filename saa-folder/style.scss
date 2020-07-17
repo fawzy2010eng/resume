@@ -4,7 +4,7 @@ $darkcolor: #393939;
 $specificMargin : 2rem;
 $bigFont: 3rem;
 $medFont: 2rem;
-$smallFont: 1rem;
+$smallFont: 13px;
 body{
 	background-color: $backgroundcolor;
 	height: 3000px
@@ -50,13 +50,24 @@ body{
 	color: $maincolor;
 	background-color: $darkcolor;
 }
-@mixin firstHover{
+@mixin darkHover{
 	background-color: $darkcolor;
 	color: $maincolor;
 }
-@mixin secondHover{
+@mixin whiteHover{
 	background-color: white;
 	color: $maincolor;
+}
+@mixin beginOfDiv{
+	background-color: white;
+	margin-top: $specificMargin;
+	padding: 4rem 2rem;
+	h3{
+		font-size: $bigFont;
+	}
+	.underH4{
+		@include underH4
+	}
 }
 @mixin underH4{
 	height: .2REM;
@@ -64,7 +75,57 @@ body{
 	background-color: $maincolor;
 	margin-bottom: 2rem;
 }
+@mixin twoOneGrid{
+	display: grid;
+	width: 100%;
+	grid-column-gap: 2rem;
+	grid-template-columns: 1fr 1fr;
+}
+@mixin gridOfDiv{
+	background-color: white;
+	@include beginOfDiv;
+	.many{
+		@include twoOneGrid;
+		.single{
+			padding: 1rem;
+			border-left: $maincolor .2rem solid;
+			&:nth-of-type(3){
+				border-top: $maincolor .2rem solid
+			}
+			&:last-of-type{
+				border-top: $maincolor .2rem solid
+			}
+			.span{
+				@include Span;
+			}
+			h5{
+				font-size: $smallFont;
+				letter-spacing: 1px;
+			}
+			span{
+				color: $maincolor
+			}
+		}
 
+	}
+	@media(max-width:768px){
+		.many{
+			grid-template-columns: auto !important;
+		}
+		.single:first-of-type{
+			border-bottom: $maincolor .2rem solid
+		}
+	}
+}
+@mixin Span{
+	position: relative;
+	left: -1.5rem;
+	top: 1rem;
+	height: .8rem;
+	width: .8rem;
+	border-radius: 50%;
+	background-color: $maincolor
+}
 @keyframes bounceInRight {
 	
 } 
@@ -123,8 +184,7 @@ body{
 }
 
 //setting the side menu
-
-//sdecrease the size at 992px
+//decrease the size at 992px
 @media (max-width: 992px) { 
 	.container{
 		max-width: 100%;
@@ -159,7 +219,7 @@ body{
 	} 
 }	
 
-//hide it at 768px
+//hide it at 768px and show the top navbar
 @media(max-width:768px){
 	.sideMenu{
 		display: none !important;
@@ -172,6 +232,7 @@ body{
 	}
 	
 }	
+
 .main{
 	width: 78%;
 	margin-left: auto;
@@ -181,6 +242,7 @@ body{
 		background-color: $backgroundcolor;
 		height: $specificMargin;
 		width: 100%;
+		z-index: 3;
 	}
 	nav{
 		display: none;
@@ -244,15 +306,7 @@ body{
 	
 	}
 	.about{
-		background-color: white;
-		margin-top: $specificMargin;
-		padding: 4rem 2rem;
-		h3{
-			font-size: $bigFont;
-		}
-		.underH4{
-			@include underH4
-		}
+		@include beginOfDiv;
 		.info{
 			@include FLEX;
 			margin-bottom: 2rem;
@@ -269,7 +323,7 @@ body{
 				@include firstface;
 				border: $maincolor solid 1px;
 				&:hover{
-					@include firstHover;
+					@include darkHover;
 				}
 			}
 		}
@@ -297,36 +351,147 @@ body{
 					div{
 						height: 100%;
 						background-color: $maincolor;
-//						width: 0;
 					}
+				}
+			}
+			[data-aos="example-anim1"]{
+				width: 0 !important;
+				transition-property: all;
+			}
+			.parameter:first-of-type .aos-animate{
+				width: 85% !important
+			}
+			.parameter:nth-of-type(2) .aos-animate {
+				width: 75% !important
+			}
+			.parameter:nth-of-type(3) .aos-animate{
+				width: 90% !important
+			}
+			.parameter:last-of-type .aos-animate{
+				width: 95% !important
+			}
+
+		}
+		@media(max-width:768px){
+			.parameters{
+				grid-template-columns: auto !important;
+			}
+		}
+
+
+	}
+	.education{
+		@include gridOfDiv;
+	}
+	.experience{
+		@include gridOfDiv
+	}
+	.services{
+		@include gridOfDiv;
+		i{
+			color: $maincolor; 
+			font-size: 2rem;
+			margin-bottom: 1rem;
+		}
+	}
+	.portofolio{
+		@include gridOfDiv;
+		.btns{
+			margin-bottom: 2rem;
+			display: flex;
+			button{
+				background-color: transparent;
+				border: $maincolor solid 1px;
+				color: black;
+				margin: 0;
+				cursor: pointer;
+				&:hover{
+					background-color: $maincolor;
+					
+				}
+			}
+			button:first-of-type,button:nth-of-type(2),button:nth-of-type(3){
+				border-right-width: 0;
+			}
+		}
+		.tiles{
+			display: grid;
+			width: 100%;
+			grid-gap: 3rem;
+			grid-template-columns: auto auto auto;
+			.tile{
+				position: relative;
+				
+				&:hover{
+					.details{
+						height: 30%;
+						opacity: 1;
+					}
+					.right{
+						right: 25%;
+						opacity: 1;
+					}
+					.left{
+						left: 25%;
+						opacity: 1;
+					}
+					
+				}
+				img{
+					background-size: cover;
+					max-width: 100%;
+					height: 100%;
+				}
+				.right{
+					background-color: rgba(255, 126, 113, 1);
+					opacity: 0;
+					width: 3rem;
+					height: 3rem;
+					position: absolute;
+					top: 25%;
+					right: 0%;
+					cursor: pointer;
+					@include FLEX
+			
+
+				}
+				.left{
+					background-color: rgba(255, 126, 113, 1);
+					opacity: 0;					
+					width: 3rem;
+					height: 3rem;
+					position: absolute;
+					top: 25%;
+					left: 0;
+					cursor: pointer;
+					@include FLEX
+				}
+				.details{
+					background-color: rgba(255, 126, 113, .4);
+					text-align: center;
+					opacity: 0;
+					position: absolute;
+					width: 100%;
+					height: 0%;
+					bottom: 0;
+					left: 0;
 				}
 			}
 		}
 	}
-}
-@media(max-width:768px){
-	.parameters{
-		grid-template-columns: auto !important;
+	
+	
+	
+	.bottom-top{
+		position: fixed;
+		bottom: 0;
+		background-color: $backgroundcolor;
+		height: $specificMargin;
+		width: 100%;
+		z-index: 3
 	}
 }
 
-
-[data-aos="example-anim1"]{
-	width: 0 !important;
-    transition-property: all;
-}
-.parameters .parameter:first-of-type .aos-animate{
-	width: 85% !important
-}
-.parameters .parameter:nth-of-type(2) .aos-animate {
-	width: 75% !important
-}
-.parameters .parameter:nth-of-type(3) .aos-animate{
-	width: 90% !important
-}
-.parameters .parameter:last-of-type .aos-animate{
-	width: 95% !important
-}
 
 
 
