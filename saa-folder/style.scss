@@ -38,21 +38,21 @@ body{
 	font-size: .6rem
 }
 @mixin FLEX{
-	display: flex;
-	justify-content: center;
-	align-items: center;
+	display: flex !important;
+	justify-content: center !important;
+	align-items: center !important;
 }
 @mixin firstface{
-	background-color: $maincolor;
-	color: $darkcolor;
+	background-color: $maincolor !important;
+	color: $darkcolor !important;
 }
 @mixin secondface{
 	color: $maincolor;
 	background-color: $darkcolor;
 }
 @mixin darkHover{
-	background-color: $darkcolor;
-	color: $maincolor;
+	background-color: $darkcolor !important;
+	color: $maincolor !important;
 }
 @mixin whiteHover{
 	background-color: white;
@@ -129,6 +129,92 @@ body{
 @keyframes bounceInRight {
 	
 } 
+.overlay{
+	height: 100%;
+	width: 100%;
+	position: fixed;
+	display: none;
+	top: 0;
+	left: 0;
+	background-color: rgba(57, 57, 57, .9);
+	z-index: 5;
+	.owl-carousel{
+		@include FLEX;
+		.card{
+			border: none;
+			background-color: transparent;
+			img{
+				width: 50% !important;
+				height: 50%;
+				margin: 0 auto;
+			}
+			.close{		
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 4rem;
+				height: 4rem;
+				@include FLEX;
+				background-color: $maincolor;
+				color: $darkcolor;
+				i{
+					font-size: 3rem;
+				}
+				&:hover{
+					@include darkHover
+						
+				}	
+			}
+			
+		}
+		
+	}
+	.owl-nav{
+		.owl-prev,.owl-next{
+			position: absolute;
+			top: 40%;
+			width: 4rem;
+			height: 4rem;
+			@include firstface;
+			span{
+				
+			line-height: 3rem;
+				font-size: 5rem;
+			}
+			&:hover{
+				@include darkHover
+			}
+		}
+		.owl-prev{
+			left: 15%;
+		}
+		.owl-next{
+			right: 15%;
+		}
+	}
+	@media(max-width:992px){
+		.owl-prev,.owl-next{
+			width: 2rem !important;
+			height: 2rem !important;
+			span{
+				line-height: 1.3rem !important;
+				font-size: 2rem !important;
+			}
+		}
+		.close{
+			width: 2rem !important;
+			height: 2rem !important;
+			i{
+				font-size: 2rem !important;
+			}
+		}
+	}
+	@media(max-width:600px){
+		.owl-prev,.owl-next{
+			display: none !important;
+		}
+	}
+}
 
 .container .sideMenu{
 	position: fixed;
@@ -421,7 +507,6 @@ body{
 			grid-template-columns: auto auto auto;
 			.tile{
 				position: relative;
-				
 				&:hover{
 					.details{
 						height: 30%;
@@ -451,9 +536,11 @@ body{
 					top: 25%;
 					right: 0%;
 					cursor: pointer;
-					@include FLEX
-			
-
+					@include FLEX;
+					&:hover{
+						@include darkHover;
+						color: $maincolor
+					}
 				}
 				.left{
 					background-color: rgba(255, 126, 113, 1);
@@ -464,7 +551,11 @@ body{
 					top: 25%;
 					left: 0;
 					cursor: pointer;
-					@include FLEX
+					@include FLEX;
+					&:hover{
+						@include darkHover;
+						color: $maincolor
+					}
 				}
 				.details{
 					background-color: rgba(255, 126, 113, .4);
@@ -477,9 +568,42 @@ body{
 					left: 0;
 				}
 			}
+			@media(max-width:992px){
+				grid-template-columns: auto auto !important;
+			}
+			@media(max-width:500px){
+				grid-template-columns: auto !important;
+			}
 		}
 	}
-	
+	.review{
+		@include gridOfDiv;
+		.client{
+			display: flex;
+			img{
+				width: 5rem;
+				height: 5rem;
+				margin-right: .5rem;
+			}
+			h3{
+				font-size: 1.4rem
+			}
+			h5{
+				font-size: .7rem
+			}
+			.owl-dots{
+				@include FLEX;
+				.owl-dot{
+					height: 2rem !important;
+					width: 2rem !important;
+					background-color: transparent !important;
+					border: solid 1 px $maincolor !important;
+					border-radius: 50% !important;
+						
+				}
+			}
+		}
+	}
 	
 	
 	.bottom-top{

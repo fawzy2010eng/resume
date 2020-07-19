@@ -5,6 +5,75 @@ body {
 * {
   transition: all .5s ease; }
 
+.overlay {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  display: none;
+  top: 0;
+  left: 0;
+  background-color: rgba(57, 57, 57, 0.9);
+  z-index: 5; }
+  .overlay .owl-carousel {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important; }
+    .overlay .owl-carousel .card {
+      border: none;
+      background-color: transparent; }
+      .overlay .owl-carousel .card img {
+        width: 50% !important;
+        height: 50%;
+        margin: 0 auto; }
+      .overlay .owl-carousel .card .close {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 4rem;
+        height: 4rem;
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        background-color: #FF7E71;
+        color: #393939; }
+        .overlay .owl-carousel .card .close i {
+          font-size: 3rem; }
+        .overlay .owl-carousel .card .close:hover {
+          background-color: #393939 !important;
+          color: #FF7E71 !important; }
+  .overlay .owl-nav .owl-prev, .overlay .owl-nav .owl-next {
+    position: absolute;
+    top: 40%;
+    width: 4rem;
+    height: 4rem;
+    background-color: #FF7E71 !important;
+    color: #393939 !important; }
+    .overlay .owl-nav .owl-prev span, .overlay .owl-nav .owl-next span {
+      line-height: 3rem;
+      font-size: 5rem; }
+    .overlay .owl-nav .owl-prev:hover, .overlay .owl-nav .owl-next:hover {
+      background-color: #393939 !important;
+      color: #FF7E71 !important; }
+  .overlay .owl-nav .owl-prev {
+    left: 15%; }
+  .overlay .owl-nav .owl-next {
+    right: 15%; }
+  @media (max-width: 992px) {
+    .overlay .owl-prev, .overlay .owl-next {
+      width: 2rem !important;
+      height: 2rem !important; }
+      .overlay .owl-prev span, .overlay .owl-next span {
+        line-height: 1.3rem !important;
+        font-size: 2rem !important; }
+    .overlay .close {
+      width: 2rem !important;
+      height: 2rem !important; }
+      .overlay .close i {
+        font-size: 2rem !important; } }
+  @media (max-width: 600px) {
+    .overlay .owl-prev, .overlay .owl-next {
+      display: none !important; } }
+
 .container .sideMenu {
   position: fixed;
   top: 0;
@@ -48,9 +117,9 @@ body {
       background-color: #FF7E71;
       height: 2rem;
       width: 2rem;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      display: flex !important;
+      justify-content: center !important;
+      align-items: center !important;
       cursor: pointer;
       color: #393939; }
       .container .sideMenu .links i:hover {
@@ -129,9 +198,9 @@ body {
         color: #FF7E71;
         font-size: 0.6rem; }
   .main .home {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
     background-color: white;
     margin-left: auto; }
     .main .home .txt {
@@ -147,9 +216,9 @@ body {
     display: flex; }
     .main .applications .applicant {
       width: 50%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      display: flex !important;
+      justify-content: center !important;
+      align-items: center !important;
       cursor: pointer; }
       .main .applications .applicant i {
         margin-right: 1rem; }
@@ -159,8 +228,8 @@ body {
       .main .applications .applicant:first-of-type:hover {
         animation: bounceInRight 1s ease-in-out; }
     .main .applications .applicant:last-of-type {
-      background-color: #FF7E71;
-      color: #393939; }
+      background-color: #FF7E71 !important;
+      color: #393939 !important; }
   .main .about {
     background-color: white;
     margin-top: 2rem;
@@ -173,9 +242,9 @@ body {
       background-color: #FF7E71;
       margin-bottom: 2rem; }
     .main .about .info {
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      display: flex !important;
+      justify-content: center !important;
+      align-items: center !important;
       margin-bottom: 2rem; }
       .main .about .info img {
         width: 40%;
@@ -185,12 +254,12 @@ body {
       .main .about .info button {
         cursor: pointer;
         font-size: 1.5rem;
-        background-color: #FF7E71;
-        color: #393939;
+        background-color: #FF7E71 !important;
+        color: #393939 !important;
         border: #FF7E71 solid 1px; }
         .main .about .info button:hover {
-          background-color: #393939;
-          color: #FF7E71; }
+          background-color: #393939 !important;
+          color: #FF7E71 !important; }
     .main .about .parameters {
       display: grid;
       width: 100%;
@@ -441,9 +510,13 @@ body {
           top: 25%;
           right: 0%;
           cursor: pointer;
-          display: flex;
-          justify-content: center;
-          align-items: center; }
+          display: flex !important;
+          justify-content: center !important;
+          align-items: center !important; }
+          .main .portofolio .tiles .tile .right:hover {
+            background-color: #393939 !important;
+            color: #FF7E71 !important;
+            color: #FF7E71; }
         .main .portofolio .tiles .tile .left {
           background-color: #ff7e71;
           opacity: 0;
@@ -453,9 +526,13 @@ body {
           top: 25%;
           left: 0;
           cursor: pointer;
-          display: flex;
-          justify-content: center;
-          align-items: center; }
+          display: flex !important;
+          justify-content: center !important;
+          align-items: center !important; }
+          .main .portofolio .tiles .tile .left:hover {
+            background-color: #393939 !important;
+            color: #FF7E71 !important;
+            color: #FF7E71; }
         .main .portofolio .tiles .tile .details {
           background-color: rgba(255, 126, 113, 0.4);
           text-align: center;
@@ -465,6 +542,74 @@ body {
           height: 0%;
           bottom: 0;
           left: 0; }
+      @media (max-width: 992px) {
+        .main .portofolio .tiles {
+          grid-template-columns: auto auto !important; } }
+      @media (max-width: 500px) {
+        .main .portofolio .tiles {
+          grid-template-columns: auto !important; } }
+  .main .review {
+    background-color: white;
+    background-color: white;
+    margin-top: 2rem;
+    padding: 4rem 2rem; }
+    .main .review h3 {
+      font-size: 3rem; }
+    .main .review .underH4 {
+      height: .2REM;
+      width: 10%;
+      background-color: #FF7E71;
+      margin-bottom: 2rem; }
+    .main .review .many {
+      display: grid;
+      width: 100%;
+      grid-column-gap: 2rem;
+      grid-template-columns: 1fr 1fr; }
+      .main .review .many .single {
+        padding: 1rem;
+        border-left: #FF7E71 0.2rem solid; }
+        .main .review .many .single:nth-of-type(3) {
+          border-top: #FF7E71 0.2rem solid; }
+        .main .review .many .single:last-of-type {
+          border-top: #FF7E71 0.2rem solid; }
+        .main .review .many .single .span {
+          position: relative;
+          left: -1.5rem;
+          top: 1rem;
+          height: .8rem;
+          width: .8rem;
+          border-radius: 50%;
+          background-color: #FF7E71; }
+        .main .review .many .single h5 {
+          font-size: 13px;
+          letter-spacing: 1px; }
+        .main .review .many .single span {
+          color: #FF7E71; }
+    @media (max-width: 768px) {
+      .main .review .many {
+        grid-template-columns: auto !important; }
+      .main .review .single:first-of-type {
+        border-bottom: #FF7E71 0.2rem solid; } }
+    .main .review .client {
+      display: flex; }
+      .main .review .client img {
+        width: 5rem;
+        height: 5rem;
+        margin-right: .5rem; }
+      .main .review .client h3 {
+        font-size: 1.4rem; }
+      .main .review .client h5 {
+        font-size: 0.7rem; }
+      .main .review .client .owl-dots {
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important; }
+        .main .review .client .owl-dots .owl-dot {
+          height: 2rem !important;
+          width: 2rem !important;
+          background-color: transparent !important;
+          border: solid 1 px #FF7E71 !important;
+          border-radius: 50% !important; }
   .main .bottom-top {
     position: fixed;
     bottom: 0;

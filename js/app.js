@@ -57,15 +57,49 @@ for(var i = 1; i < btns.length; i++){
 	})
 }
 
+//slide show
+
+
+var showBtns = document.querySelectorAll('.fa-eye');
+var owlItems = document.querySelectorAll('.owl-carousel .owl-item');
+var overlay = document.querySelector('.overlay');
+var colsebtns = document.querySelectorAll('.close');
+
+for(var i = 0; i < showBtns.length; i++){
+	showBtns[i].addEventListener('click',function(){
+		var order = this.parentElement.parentElement.getAttribute('data-order');
+		overlay.style.display = 'flex';
+		$('.overlay .owl-carousel').owlCarousel({
+			items: 1,
+			autoplay : true,
+			loop : true,
+			nav: true,
+			dots : false,
+			dotsEach : 1,
+			startPosition: order    
+		})	
+		
+
+	})
+}
+for(var i = 0; i < colsebtns.length; i++){
+	colsebtns[i].addEventListener('click',function(){
+		overlay.style.display = 'none';
+	})
+
+}
 
 
 
+//review carousel
 
-
-
-
-
-
+$('.review .owl-carousel').owlCarousel({
+			items: 1,
+			autoplay : true,
+			loop : true,
+			dots : true,
+			dotsEach : 1, 
+		})	
 
 
 
