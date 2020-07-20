@@ -58,8 +58,6 @@ for(var i = 1; i < btns.length; i++){
 }
 
 //slide show
-
-
 var showBtns = document.querySelectorAll('.fa-eye');
 var owlItems = document.querySelectorAll('.owl-carousel .owl-item');
 var overlay = document.querySelector('.overlay');
@@ -71,7 +69,7 @@ for(var i = 0; i < showBtns.length; i++){
 		overlay.style.display = 'flex';
 		$('.overlay .owl-carousel').owlCarousel({
 			items: 1,
-			autoplay : true,
+			autoplay : false,
 			loop : true,
 			nav: true,
 			dots : false,
@@ -88,10 +86,7 @@ for(var i = 0; i < colsebtns.length; i++){
 	})
 
 }
-
-
-
-//review carousel
+//reviews carousel
 
 $('.review .owl-carousel').owlCarousel({
 			items: 1,
@@ -100,6 +95,127 @@ $('.review .owl-carousel').owlCarousel({
 			dots : true,
 			dotsEach : 1, 
 		})	
+
+
+
+//adding navigation to the menu
+
+//list of directs
+
+var dircts = document.querySelectorAll('.sideMenu .dirct');
+function hilightDirct(div){
+	div.querySelector('h6').style.color = '#FF7E71';
+	div.querySelector('i').style.color = 'white';
+//	div.style.border = 'solid 2px #FF7E71'
+}
+function clearDirct(div){
+	div.querySelector('h6').style.color = 'white';
+	div.querySelector('i').style.color = '#FF7E71';
+}
+function clearDircts(){
+	for(var i = 0; i < dircts.length; i++){
+		dircts[i].querySelector('i').style.color = '#FF7E71';
+		dircts[i].querySelector('h6').style.color = 'white';
+//		dircts[i].style.border = 'none'
+	}
+}
+//alert(dircts.length);
+
+//window.addEventListener('scroll',function(){
+//    var currentScrollPos = window.pageYOffset;
+//    if(currentScrollPos > 4000){
+//		clearDircts();
+//		hilightDirct(dircts[5]);
+//	}
+//	else if(currentScrollPos > 2800){		
+//		clearDircts();
+//		hilightDirct(dircts[4]);
+//	}
+//	else if(currentScrollPos > 2250){		
+//		clearDircts();
+//		hilightDirct(dircts[3])
+//	}
+//	else if(currentScrollPos > 1660){		
+//		clearDircts();
+//		hilightDirct(dircts[2])
+//	}
+//	else if(currentScrollPos > 400){
+//		clearDircts();
+//		hilightDirct(dircts[1]);
+//	}
+//	else{
+//		clearDircts();
+//		hilightDirct(dircts[0])
+//	}
+//})
+for(var i = 0; i < dircts.length; i++){
+	dircts[i].addEventListener('mouseover',function(){
+		hilightDirct(dircts[i])
+	})
+	dircts[i].addEventListener('mouseout',function(){
+		clearDirct(dircts[i])
+	})
+}
+window.addEventListener('scroll',function(){
+	var currentScrollPos = window.pageYOffset;
+	 if(currentScrollPos < 400 && currentScrollPos > -1){
+		hilightDirct(dircts[0]);
+	}
+	else{
+		clearDirct(dircts[0])
+	}
+})
+window.addEventListener('scroll',function(){
+	var currentScrollPos = window.pageYOffset;
+	 if(currentScrollPos > 400 && currentScrollPos < 1600){
+		hilightDirct(dircts[1]);
+	}
+	else{
+		clearDirct(dircts[1])
+	}
+})
+window.addEventListener('scroll',function(){
+	var currentScrollPos = window.pageYOffset;
+	 if(currentScrollPos > 1600 && currentScrollPos < 2250){
+		hilightDirct(dircts[2]);
+	}
+	else{
+		clearDirct(dircts[2])
+	}
+})
+window.addEventListener('scroll',function(){
+	var currentScrollPos = window.pageYOffset;
+	 if(currentScrollPos > 2250 && currentScrollPos < 2800){
+		hilightDirct(dircts[3]);
+	}
+	else{
+		clearDirct(dircts[3])
+	}
+})
+window.addEventListener('scroll',function(){
+	var currentScrollPos = window.pageYOffset;
+	 if(currentScrollPos > 2800 && currentScrollPos < 4000){
+		hilightDirct(dircts[4]);
+	}
+	else{
+		clearDirct(dircts[4])
+	}
+})
+window.addEventListener('scroll',function(){
+	var currentScrollPos = window.pageYOffset;
+	 if(currentScrollPos > 4000){
+		hilightDirct(dircts[5]);
+	}
+	else{
+		clearDirct(dircts[5])
+	}
+})
+
+
+
+
+
+
 
 
 
