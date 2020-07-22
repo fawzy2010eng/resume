@@ -96,7 +96,8 @@ body {
       border-bottom: .05rem solid grey;
       cursor: pointer; }
       .container .sideMenu .directories .dirct:hover {
-        box-shadow: 1px 2px white; }
+        box-shadow: 1px 2px white;
+padding: 0 15%;}
     .container .sideMenu .directories .dirct:first-of-type {
       padding-top: 0.4rem; }
     .container .sideMenu .directories .dirct:last-of-type {
