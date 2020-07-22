@@ -16,12 +16,7 @@
         <link rel="stylesheet" href="css/all.css">
 		<!--aos scroll library-->
 		<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-<!--
-		 Import PhotoSwipe Styles 
-  		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.0/photoswipe.css">
--->
-
-        <!-- main css -->
+		<!-- main css -->
         <link rel="stylesheet" href="css/style.css">
 		
 		<title>Resume</title>
@@ -67,27 +62,27 @@
 				<div class="header"><img src="images/profileheader.jpg"></div>
 				
 				<div class="directories">
-					<div class="dirct">
+					<div class="dirct" data-div="home">
 						<h6>Home</h6>
 						<i class="fas fa-home"></i>
 					</div>
-					<div class="dirct">
+					<div class="dirct" data-div="about">
 						<h6>About</h6>
 						<i class="fas fa-address-card"></i>
 					</div>
-					<div class="dirct">
+					<div class="dirct" data-div="experience">
 						<h6>Experience</h6>
 						<i class="fas fa-star"></i>
 					</div>
-					<div class="dirct">
+					<div class="dirct" data-div="services">
 						<h6>Services</h6>
 						<i class="fas fa-tasks"></i>
 					</div>
-					<div class="dirct">
+					<div class="dirct" data-div="portofolio">
 						<h6>Portfolio</h6>
 						<i class="fas fa-portrait"></i>
 					</div>
-					<div class="dirct">
+					<div class="dirct" data-div="contact">
 						<h6>Contact</h6>
 						<i class="fas fa-id-card-alt"></i>
 					</div>
@@ -109,27 +104,27 @@
 
 					<div class="collapse navbar-collapse" id="navbarSupportedContent">
 						<ul class="navbar-nav ml-auto">
-							<div class="dirct">
+							<div class="dirct" data-div="home">
 								<h6>Home</h6>
 								<i class="fas fa-home"></i>
 							</div>
-							<div class="dirct">
+							<div class="dirct" data-div="about">
 								<h6>About</h6>
 								<i class="fas fa-address-card"></i>
 							</div>
-							<div class="dirct">
+							<div class="dirct" data-div="experience">
 								<h6>Experience</h6>
 								<i class="fas fa-star"></i>
 							</div>
-							<div class="dirct">
+							<div class="dirct" data-div="services">
 								<h6>Services</h6>
 								<i class="fas fa-tasks"></i>
 							</div>
-							<div class="dirct">
+							<div class="dirct" data-div="portofolio">
 								<h6>Portfolio</h6>
 								<i class="fas fa-portrait"></i>
 							</div>
-							<div class="dirct">
+							<div class="dirct" data-div="contact">
 								<h6>Contact</h6>
 								<i class="fas fa-id-card-alt"></i>
 							</div>
@@ -137,7 +132,7 @@
 					</div>
 				</nav>
 				
-				<div class="home">
+				<div class="home" href="home">
 					<div class="txt">
 						<h6>I'M</h6>
 						<h3>Micheal Miller</h3>
@@ -288,7 +283,6 @@
 						</div>
 					</div>
 				</div>
-				
 				
 				<div class="portofolio">
 					<h3>Portfolio</h3>
@@ -469,7 +463,8 @@
 			</div>
 		</div>
 
-		
+		<i class="fas fa-angle-double-up"></i>
+
 		
 		<!-- jquery -->
         <script src="js/jquery-3.4.1.min.js"></script>
@@ -481,7 +476,7 @@
 		</script>
 		<!--aos scroll library-->
 		<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-		<!--		photswipe-->
+		<!--photswipe-->
 <!--
 			<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.0/photoswipe.min.js"></script>
 			<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.0/photoswipe-ui-default.min.js"></script>

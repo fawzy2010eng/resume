@@ -106,7 +106,6 @@ var dircts = document.querySelectorAll('.sideMenu .dirct');
 function hilightDirct(div){
 	div.querySelector('h6').style.color = '#FF7E71';
 	div.querySelector('i').style.color = 'white';
-//	div.style.border = 'solid 2px #FF7E71'
 }
 function clearDirct(div){
 	div.querySelector('h6').style.color = 'white';
@@ -116,46 +115,9 @@ function clearDircts(){
 	for(var i = 0; i < dircts.length; i++){
 		dircts[i].querySelector('i').style.color = '#FF7E71';
 		dircts[i].querySelector('h6').style.color = 'white';
-//		dircts[i].style.border = 'none'
 	}
 }
-//alert(dircts.length);
-
-//window.addEventListener('scroll',function(){
-//    var currentScrollPos = window.pageYOffset;
-//    if(currentScrollPos > 4000){
-//		clearDircts();
-//		hilightDirct(dircts[5]);
-//	}
-//	else if(currentScrollPos > 2800){		
-//		clearDircts();
-//		hilightDirct(dircts[4]);
-//	}
-//	else if(currentScrollPos > 2250){		
-//		clearDircts();
-//		hilightDirct(dircts[3])
-//	}
-//	else if(currentScrollPos > 1660){		
-//		clearDircts();
-//		hilightDirct(dircts[2])
-//	}
-//	else if(currentScrollPos > 400){
-//		clearDircts();
-//		hilightDirct(dircts[1]);
-//	}
-//	else{
-//		clearDircts();
-//		hilightDirct(dircts[0])
-//	}
-//})
-for(var i = 0; i < dircts.length; i++){
-	dircts[i].addEventListener('mouseover',function(){
-		hilightDirct(dircts[i])
-	})
-	dircts[i].addEventListener('mouseout',function(){
-		clearDirct(dircts[i])
-	})
-}
+//hilghight each dirctory when the div is appperd
 window.addEventListener('scroll',function(){
 	var currentScrollPos = window.pageYOffset;
 	 if(currentScrollPos < 400 && currentScrollPos > -1){
@@ -210,6 +172,60 @@ window.addEventListener('scroll',function(){
 		clearDirct(dircts[5])
 	}
 })
+
+var _getDistanceFromTop = function (selector) {
+  var scrollTop = $(window).scrollTop(),
+    elementOffset = selector.offset().top,
+    distance = (elementOffset - scrollTop);
+  return distance;
+}
+//go to div when directory is pressed function
+function goToDiv(div){
+	var item  = document.querySelector(`.main .${div}`);
+	var distance = item.offsetTop;
+	window.scrollTo(0,distance)
+	
+	
+}
+//adding the function to the directories
+var directs = document.querySelectorAll('.dirct'); 
+for(var i = 0; i < directs.length; i++){
+	directs[i].addEventListener('click',function(){
+		goToDiv(this.getAttribute('data-div'))
+	})
+}
+
+
+
+
+
+//showing the up button
+window.addEventListener('scroll',function(){
+	var currentScrollPos = window.pageYOffset;
+	var upbtn = document.querySelector('.fa-angle-double-up');
+	if(currentScrollPos > 1200){
+		upbtn.style.display = 'block'
+		
+	}else{
+		upbtn.style.display = 'none'
+	}
+})
+//adding the function to the up button
+function up(){
+	var upbtn = document.querySelector('.fa-angle-double-up');
+	upbtn.addEventListener('click',function(){
+		window.scrollTo(0,0)
+	})
+}
+up()
+
+
+
+
+
+
+
+
 
 
 

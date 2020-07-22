@@ -1,3 +1,6 @@
+html {
+  scroll-behavior: smooth; }
+
 body {
   background-color: #F6D155; }
 
@@ -92,10 +95,8 @@ body {
       align-items: center;
       border-bottom: .05rem solid grey;
       cursor: pointer; }
-      .container .sideMenu .directories .dirct:hover h6 {
-        color: #FF7E71; }
-      .container .sideMenu .directories .dirct:hover i {
-        color: white; }
+      .container .sideMenu .directories .dirct:hover {
+        box-shadow: 1px 2px white; }
     .container .sideMenu .directories .dirct:first-of-type {
       padding-top: 0.4rem; }
     .container .sideMenu .directories .dirct:last-of-type {
@@ -185,10 +186,8 @@ body {
       border-bottom: .05rem solid grey;
       cursor: pointer;
       border: none !important; }
-      .main nav .dirct:hover h6 {
-        color: #FF7E71; }
-      .main nav .dirct:hover i {
-        color: white; }
+      .main nav .dirct:hover {
+        box-shadow: 1px 2px white; }
       .main nav .dirct h6 {
         color: white;
         margin-right: auto;
@@ -701,5 +700,26 @@ body {
     height: 2rem;
     width: 100%;
     z-index: 3; }
+
+.fa-angle-double-up {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background-color: transparent;
+  cursor: pointer;
+  border: none;
+  font-size: 2rem;
+  animation: ups 2s infinite;
+  display: none; }
+  .fa-angle-double-up:hover {
+    color: #FF7E71; }
+
+@keyframes ups {
+  0% {
+    bottom: 2rem; }
+  50% {
+    bottom: 4rem; }
+  100% {
+    bottom: 2rem; } }
 
 /*# sourceMappingURL=style.css.map */

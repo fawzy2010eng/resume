@@ -5,6 +5,9 @@ $specificMargin : 2rem;
 $bigFont: 3rem;
 $medFont: 2rem;
 $smallFont: 13px;
+html{
+	  scroll-behavior: smooth;
+}
 body{
 	background-color: $backgroundcolor;
 }
@@ -13,17 +16,12 @@ body{
 }
 @mixin dirct{
 	display: flex;
-		padding: 0 5%;
-		align-items: center;
-		border-bottom: .05rem solid grey;
-		cursor: pointer;
-		&:hover{
-			h6{
-				color: $maincolor
-			}
-			i{
-				color: white
-			}
+	padding: 0 5%;
+	align-items: center;
+	border-bottom: .05rem solid grey;
+	cursor: pointer;
+	&:hover{
+		box-shadow: 1px 2px white;
 	}
 }
 @mixin h6OfDirct{
@@ -137,9 +135,7 @@ body{
 		color: $maincolor
 	}
 }
-@keyframes bounceInRight {
-	
-} 
+
 .overlay{
 	height: 100%;
 	width: 100%;
@@ -712,7 +708,26 @@ body{
 	}
 }
 
-
+.fa-angle-double-up{
+	position: fixed;
+	bottom: 2rem;
+	right: 2rem;
+	background-color: transparent;
+	cursor: pointer;
+	border: none;
+	font-size: 2rem;
+	animation: ups 2s infinite;
+	display: none;
+	&:hover{
+		color: $maincolor;
+	}
+	
+}
+@keyframes ups {
+  0%   {bottom: 2rem}
+  50%  {bottom: 4rem}
+  100% {bottom: 2rem}
+}
 
 
 
